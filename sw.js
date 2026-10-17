@@ -1,7 +1,7 @@
 /* Service worker — MI CENTRO FINANCIERO
  * Sólo guarda en caché la "cáscara" de la app (HTML, íconos, manifiesto).
  * NUNCA guarda en caché respuestas de la API (datos financieros). */
-var VERSION = 'mcf-v1.0.0';
+var VERSION = 'mcf-v1.1.1';
 var SHELL = ['./', './index.html', './manifest.webmanifest', './config.js', './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png'];
 self.addEventListener('install', function (e) { e.waitUntil(caches.open(VERSION).then(function (c) { return c.addAll(SHELL); })); });
 self.addEventListener('activate', function (e) {
